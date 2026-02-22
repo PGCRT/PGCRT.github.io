@@ -363,6 +363,7 @@ h2.section-title .label {
 .install-step:nth-child(2) .step-num { border-color: var(--accent2); color: var(--accent2); }
 .install-step:nth-child(3) .step-num { border-color: var(--accent3); color: var(--accent3); }
 .install-step:nth-child(4) .step-num { border-color: var(--accent4); color: var(--accent4); }
+.install-step:nth-child(5) .step-num { border-color: var(--accent);  color: var(--accent);  }
 .install-step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
 .install-step h3 .opt { font-size: 12px; font-weight: 400; color: var(--text-muted); }
 .install-step ol {
@@ -758,7 +759,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
     <h1>Open<span>Blender</span></h1>
     <p class="hero-desc">An addon that brings generative workflows directly into Blender. Generate images, videos, 3D models, and receive AI assistance without leaving Blender.</p>
     <div class="hero-badges">
-      <span class="badge version">v0.27.0</span>
+      <span class="badge version">v0.28.0</span>
       <span class="badge blender">Blender 5.0+</span>
       <span class="badge">NVIDIA 24Gb VRAM</span>
 	  <span class="badge">85Gb SSD</span>
@@ -785,14 +786,14 @@ footer p { font-size: 13px; color: var(--text-muted); }
   <!-- Features -->
   <section class="section-anchor reveal" id="features">
     <h2 class="section-title">Features <span class="label">Core</span></h2>
-    <p class="section-sub">Seven modules that cover generation, remix, LoRA, chat, and remote control.</p>
+    <p class="section-sub">Eight modules that cover generation, remix, LoRA, HDRI, chat, and remote control.</p>
 
     <div class="feature-row">
       <div class="feat orange">
         <div class="feat-head">
           <div class="feat-icon">🖼️</div>
           <h3>IMG to IMG</h3>
-          <a class="watch-btn" onclick="openYT('jZaf7fgtOOE'); return false;" href="#">▶ Watch</a>
+          <a class="watch-btn" onclick="openYT('DjT8QRseAm4'); return false;" href="#">▶ Watch</a>
         </div>
         <p>Generate images with real-time viewport capture. Works in FreeView & CameraView.</p>
         <ul>
@@ -805,7 +806,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <div class="feat-head">
           <div class="feat-icon">🎬</div>
           <h3>IMG to VID</h3>
-          <a class="watch-btn" onclick="openYT('Cu6iuKFkfww'); return false;" href="#">▶ Watch</a>
+          <a class="watch-btn" onclick="openYT('M0ORqUfnTdo'); return false;" href="#">▶ Watch</a>
         </div>
         <p>Create videos from three keyframe images. Auto-add to Video Sequencer.</p>
         <ul>
@@ -821,7 +822,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <div class="feat-head">
           <div class="feat-icon">🧊</div>
           <h3>IMG to 3D</h3>
-          <a class="watch-btn" onclick="openYT('7u7b076tY58'); return false;" href="#">▶ Watch</a>
+          <a class="watch-btn" onclick="openYT('qTnr2gWNEo8'); return false;" href="#">▶ Watch</a>
         </div>
         <p>Convert images into GLB models via Trellis2. Imported with textures.</p>
         <ul>
@@ -832,8 +833,8 @@ footer p { font-size: 13px; color: var(--text-muted); }
       <div class="feat green">
         <div class="feat-head">
           <div class="feat-icon">💬</div>
-          <h3>Agentic Chat</h3>
-          <a class="watch-btn" onclick="openYT('Pty1DRT3H5g'); return false;" href="#">▶ Watch</a>
+          <h3>AI Chat</h3>
+          <a class="watch-btn" onclick="openYT('jR-NOhpZ6aM'); return false;" href="#">▶ Watch</a>
         </div>
         <p>Integrated chat via OpenRouter or local LM Studio.</p>
         <ul>
@@ -854,12 +855,12 @@ footer p { font-size: 13px; color: var(--text-muted); }
       </div>
     </div>
 
-    <div class="feature-row">
+    <div class="feature-row triple">
       <div class="feat blue">
         <div class="feat-head">
           <div class="feat-icon">🎨</div>
           <h3>Remix</h3>
-          <a class="watch-btn" onclick="openYT('a93WBUlQy1k'); return false;" href="#">▶ Watch</a>
+          <a class="watch-btn" onclick="openYT('eoYKnJ3uiXA'); return false;" href="#">▶ Watch</a>
         </div>
         <p>Transform any displayed image from inside the Image Editor. Uses the current image as IMG to IMG input.</p>
         <ul>
@@ -873,13 +874,26 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <div class="feat-head">
           <div class="feat-icon">🧩</div>
           <h3>LoRA Support</h3>
-          <a class="watch-btn" onclick="openYT('ZrsmP772tqk'); return false;" href="#">▶ Watch</a>
+          <a class="watch-btn" onclick="openYT('3SKgXOsP-20'); return false;" href="#">▶ Watch</a>
         </div>
         <p>Add LoRA models to your generation workflows.</p>
         <ul>
           <li>Open IMG to IMG / IMG to VID in ComfyUI WebUI</li>
           <li>Add your LoRA node(s) and save the API workflow</li>
           <li>Your LoRA stack is now applied automatically in Blender</li>
+        </ul>
+      </div>
+      <div class="feat green">
+        <div class="feat-head">
+          <div class="feat-icon">🌐</div>
+          <h3>TXT to HDRI</h3>
+          <a class="watch-btn" onclick="openYT('3269HnnFT5U'); return false;" href="#">▶ Watch</a>
+        </div>
+        <p>Generate 360° panoramic HDRI environment maps from text prompts using FLUX.2-Klein + HDRI LoRA.</p>
+        <ul>
+          <li>Full equirectangular 360° panoramic output</li>
+          <li>Klein 9B HDRI LoRA — tuned for panoramic scenes</li>
+          <li>Apply directly as World environment in Blender</li>
         </ul>
       </div>
     </div>
@@ -952,7 +966,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
   <!-- Installation -->
   <section class="section-anchor reveal" id="installation">
     <h2 class="section-title">Installation</h2>
-    <p class="section-sub">Follow these four steps to get everything running.</p>
+    <p class="section-sub">Follow these five steps to get everything running.</p>
 
     <div class="install-timeline">
       <div class="install-step">
@@ -1005,6 +1019,14 @@ footer p { font-size: 13px; color: var(--text-muted); }
           <li>Toggle feature visibility for the sidebar panels you need</li>
         </ol>
       </div>
+      <div class="install-step">
+        <div class="step-num">5</div>
+        <h3>Update <span class="opt">Keep models &amp; addon current</span></h3>
+        <ol>
+          <li>Check the <a href="https://crtcgi.gumroad.com/l/OpenBlender" target="_blank" style="color:var(--accent)">addon's Gumroad page</a> for new versions and download updates</li>
+          <li>Run <code>Verify_UpdateModels.bat</code> to check for missing or new models and auto-download them</li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -1043,7 +1065,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
     <div class="tab-panel" id="tab-chat">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
         <h3>AI Chat</h3>
-        <a class="watch-btn" onclick="openYT('Pty1DRT3H5g'); return false;" href="#">▶ Watch</a>
+        <a class="watch-btn" onclick="openYT('jR-NOhpZ6aM'); return false;" href="#">▶ Watch</a>
       </div>
       <p class="sub">Integrated AI assistant inside Blender.</p>
       <ol>
@@ -1056,7 +1078,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
     <div class="tab-panel" id="tab-i2i">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
         <h3>IMG to IMG</h3>
-        <a class="watch-btn" onclick="openYT('jZaf7fgtOOE'); return false;" href="#">▶ Watch</a>
+        <a class="watch-btn" onclick="openYT('DjT8QRseAm4'); return false;" href="#">▶ Watch</a>
       </div>
       <p class="sub">Generate images from your viewport.</p>
       <h4>🎯 Manual Mode</h4>
@@ -1082,7 +1104,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
     <div class="tab-panel" id="tab-i2v">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
         <h3>IMG to VID</h3>
-        <a class="watch-btn" onclick="openYT('Cu6iuKFkfww'); return false;" href="#">▶ Watch</a>
+        <a class="watch-btn" onclick="openYT('M0ORqUfnTdo'); return false;" href="#">▶ Watch</a>
       </div>
       <p class="sub">Generate videos from three keyframe images.</p>
       <ol>
@@ -1098,7 +1120,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
     <div class="tab-panel" id="tab-i23">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
         <h3>IMG to 3D</h3>
-        <a class="watch-btn" onclick="openYT('7u7b076tY58'); return false;" href="#">▶ Watch</a>
+        <a class="watch-btn" onclick="openYT('qTnr2gWNEo8'); return false;" href="#">▶ Watch</a>
       </div>
       <p class="sub">Convert 2D images to 3D GLB models via Trellis2.</p>
       <ol>
@@ -1112,7 +1134,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
     <div class="tab-panel" id="tab-remix">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
         <h3>Remix</h3>
-        <a class="watch-btn" onclick="openYT('a93WBUlQy1k'); return false;" href="#">▶ Watch</a>
+        <a class="watch-btn" onclick="openYT('eoYKnJ3uiXA'); return false;" href="#">▶ Watch</a>
       </div>
       <p class="sub">Transform images from inside the Image Editor side panel.</p>
       <ol>
@@ -1135,7 +1157,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
     <div class="tab-panel" id="tab-lora">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
         <h3>LoRA Support</h3>
-        <a class="watch-btn" onclick="openYT('ZrsmP772tqk'); return false;" href="#">▶ Watch</a>
+        <a class="watch-btn" onclick="openYT('3SKgXOsP-20'); return false;" href="#">▶ Watch</a>
       </div>
       <p class="sub">Add LoRA models to your generation workflows.</p>
       <ol>
@@ -1221,10 +1243,9 @@ footer p { font-size: 13px; color: var(--text-muted); }
       <div class="tip warn">
         <h3>🔧 Other Issues</h3>
         <ul>
-          <li><strong>Missing models:</strong> Run <code>install_comfyui_models.bat</code> or check <code>Models_Links.txt</code></li>
+          <li><strong>Missing models:</strong> Run <code>Verify_UpdateModels.bat</code></li>
           <li><strong>Missing nodes:</strong> ComfyUI Manager → Install Missing → Restart</li>
           <li><strong>Images not showing:</strong> Ensure Image Editor is visible</li>
-          <li><strong>Viewport not capturing:</strong> Switch to Camera view, check render resolution</li>
           <li><strong>Debug:</strong> <code>Window → Toggle System Console</code>, watch <code>[OpenBlender]</code> / <code>[PostProcess]</code></li>
         </ul>
       </div>
@@ -1259,6 +1280,16 @@ footer p { font-size: 13px; color: var(--text-muted); }
   <section class="section-anchor reveal" id="version">
     <h2 class="section-title">Version History</h2>
     <div class="version-bar" style="margin-top:16px">
+      <span class="ver-tag">v0.28.0</span>
+      <span class="ver-title">Feature Update</span>
+      <div class="ver-features">
+        <span class="ver-feat">TXT to HDRI</span>
+        <span class="ver-feat">FLUX.2-Klein HDRI LoRA</span>
+        <span class="ver-feat">360° Panoramic Generation</span>
+        <span class="ver-feat">Verify &amp; Update Models Tool</span>
+      </div>
+    </div>
+    <div class="version-bar" style="margin-top:8px">
       <span class="ver-tag">v0.27.0</span>
       <span class="ver-title">Feature Update</span>
       <div class="ver-features">
