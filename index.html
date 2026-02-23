@@ -334,7 +334,7 @@ h2.section-title .label {
   top: 4px;
   bottom: 4px;
   width: 2px;
-  background: linear-gradient(180deg, var(--accent), var(--accent2), var(--accent3), var(--accent4));
+  background: linear-gradient(180deg, var(--accent), var(--accent2), var(--accent3), var(--accent4), var(--accent));
   border-radius: 2px;
 }
 .install-step {
@@ -1021,9 +1021,10 @@ footer p { font-size: 13px; color: var(--text-muted); }
       </div>
       <div class="install-step">
         <div class="step-num">5</div>
-        <h3>Update <span class="opt">Keep models &amp; addon current</span></h3>
+        <h3>Update</h3>
         <ol>
           <li>Check the <a href="https://crtcgi.gumroad.com/l/OpenBlender" target="_blank" style="color:var(--accent)">addon's Gumroad page</a> for new versions and download updates</li>
+          <li>Replace the content of <code>Blender\5.0\extensions\user_default\openblender</code></li>
           <li>Run <code>Verify_UpdateModels.bat</code> to check for missing or new models and auto-download them</li>
         </ol>
       </div>
