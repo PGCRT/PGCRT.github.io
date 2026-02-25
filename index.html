@@ -759,7 +759,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
     <h1>Open<span>Blender</span></h1>
     <p class="hero-desc">An addon that brings generative workflows directly into Blender. Generate images, videos, 3D models, and receive AI assistance without leaving Blender.</p>
     <div class="hero-badges">
-      <span class="badge version">v0.28.2</span>
+      <span class="badge version">v0.29.0</span>
       <span class="badge blender">Blender 5.0+</span>
       <span class="badge">NVIDIA 24Gb VRAM</span>
 	  <span class="badge">85Gb SSD</span>
@@ -777,7 +777,6 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
         CivitAI
       </a>
-      <a href="#features" class="btn-secondary">Read the Docs ↓</a>
     </div>
   </section>
 
@@ -1045,6 +1044,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
       <button class="tab-btn" data-tab="i2v">IMG to VID</button>
       <button class="tab-btn" data-tab="i23">IMG to 3D</button>
       <button class="tab-btn" data-tab="remix">Remix</button>
+      <button class="tab-btn" data-tab="hdri">TXT to HDRI</button>
       <button class="tab-btn" data-tab="lora">LoRA Support</button>
     </div>
 
@@ -1146,13 +1146,35 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <li>Result appears as <code>Remix.001</code>, <code>Remix.002</code>… in the Image Editor</li>
       </ol>
       <h4>📤 Send to IMG to 3D</h4>
-      <p>Click <strong>"Send to IMG to 3D"</strong> in the Remix panel to push the currently displayed image to the IMG to 3D input — ready to generate a 3D model in one click.</p>
+      <p>Click <strong>"Send to IMG to 3D"</strong> to push the currently displayed image to the IMG to 3D input.</p>
+      <h4>🎬 Send to IMG to VID Frame</h4>
+      <p>Use <strong>"Send to First / Middle / Last Frame"</strong> to assign the current Image Editor image directly to an IMG to VID keyframe slot — no need to switch panels.</p>
       <div class="param-grid" style="margin-top:12px">
         <div class="param"><span class="key">Prompt</span><br><span class="val">Describe the remixed result</span></div>
-        <div class="param"><span class="key">Megapixels</span><br><span class="val">Resolution: 0.1 – 1.0</span></div>
+        <div class="param"><span class="key">Megapixels</span><br><span class="val">Resolution: 0.1 – 4.0</span></div>
         <div class="param"><span class="key">Steps</span><br><span class="val">Inference steps: 1 – 20</span></div>
-        <div class="param"><span class="key">Denoise</span><br><span class="val">0.0 – 1.0 (how much to change)</span></div>
+        <div class="param"><span class="key">Denoise</span><br><span class="val">0.0 – 1.0 (Z-Image Turbo only)</span></div>
       </div>
+    </div>
+
+    <div class="tab-panel" id="tab-hdri">
+      <h3>TXT to HDRI</h3>
+      <p class="sub">Generate 360° equirectangular HDRI environment maps from text prompts using FLUX.2-Klein + Klein 9B HDRI LoRA.</p>
+      <ol>
+        <li>Set viewport shading to <strong>Material Preview</strong> or <strong>Rendered</strong> so the environment is visible</li>
+        <li>In <strong>Properties → World</strong>, ensure a World data block exists — click <strong>"New"</strong> if the slot is empty</li>
+        <li>Open the <strong>OpenBlender</strong> sidebar panel (<code>N</code> key → OpenBlender tab)</li>
+        <li>Enter a <strong>Prompt</strong> describing the environment</li>
+        <li>Set <strong>Megapixels</strong> and <strong>Steps</strong></li>
+        <li>Click <strong>"Generate HDRI"</strong></li>
+        <li>The generated panorama is automatically applied to the scene World as an environment texture</li>
+      </ol>
+      <div class="param-grid" style="margin-top:12px">
+        <div class="param"><span class="key">Prompt</span><br><span class="val">Describe the environment (sky, studio, nature…)</span></div>
+        <div class="param"><span class="key">Megapixels</span><br><span class="val">Resolution: 0.5 – 4.0+</span></div>
+        <div class="param"><span class="key">Steps</span><br><span class="val">Inference steps: 1 – 20</span></div>
+      </div>
+      <p style="margin-top:12px">The required model is installed automatically by the installer or the <code>Verify_UpdateModels.bat</code> tool.</p>
     </div>
 
     <div class="tab-panel" id="tab-lora">
@@ -1281,6 +1303,26 @@ footer p { font-size: 13px; color: var(--text-muted); }
   <section class="section-anchor reveal" id="version">
     <h2 class="section-title">Version History</h2>
     <div class="version-bar" style="margin-top:16px">
+      <span class="ver-tag">v0.29.0</span>
+      <span class="ver-title">Major Feature Update</span>
+      <div class="ver-features">
+        <span class="ver-feat">Instant WS Completion</span>
+        <span class="ver-feat">Workflow Config JSON</span>
+        <span class="ver-feat">Correct Output Node Resolution</span>
+        <span class="ver-feat">Interrupt Button</span>
+        <span class="ver-feat">Queue Position Display</span>
+        <span class="ver-feat">Graceful Stop</span>
+        <span class="ver-feat">Denoise Hidden for Flux-KLEIN</span>
+        <span class="ver-feat">Send to VID Frame Buttons</span>
+        <span class="ver-feat">WS Decompression Fix</span>
+        <span class="ver-feat">15 New MCP Tools (53 → 68 total)</span>
+        <span class="ver-feat">Lighting Tools</span>
+        <span class="ver-feat">Camera Cinematography Tools</span>
+        <span class="ver-feat">Shader Node Graph Tools</span>
+        <span class="ver-feat">Generation Pipeline Tools</span>
+      </div>
+    </div>
+    <div class="version-bar" style="margin-top:8px">
       <span class="ver-tag">v0.28.2</span>
       <span class="ver-title">Patch</span>
       <div class="ver-features">
