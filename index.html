@@ -759,7 +759,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
     <h1>Open<span>Blender</span></h1>
     <p class="hero-desc">An addon that brings generative workflows directly into Blender. Generate images, videos, 3D models, and receive AI assistance without leaving Blender.</p>
     <div class="hero-badges">
-      <span class="badge version">v0.29.0</span>
+      <span class="badge version">v0.30.1</span>
       <span class="badge blender">Blender 5.0+</span>
       <span class="badge">NVIDIA 24Gb VRAM</span>
 	  <span class="badge">85Gb SSD</span>
@@ -785,9 +785,9 @@ footer p { font-size: 13px; color: var(--text-muted); }
   <!-- Features -->
   <section class="section-anchor reveal" id="features">
     <h2 class="section-title">Features <span class="label">Core</span></h2>
-    <p class="section-sub">Eight modules that cover generation, remix, LoRA, HDRI, chat, and remote control.</p>
+    <p class="section-sub">Nine modules that cover generation, remix, LoRA, HDRI, chat, and remote control.</p>
 
-    <div class="feature-row">
+    <div class="feature-row triple">
       <div class="feat orange">
         <div class="feat-head">
           <div class="feat-icon">🖼️</div>
@@ -814,6 +814,20 @@ footer p { font-size: 13px; color: var(--text-muted); }
           <li>Re-click any keyframe to replace it</li>
         </ul>
       </div>
+      <div class="feat purple">
+        <div class="feat-head">
+          <div class="feat-icon">✨</div>
+          <h3>TXT to IMG</h3>
+          <a class="watch-btn" onclick="openYT('AbfF0QtKvw4'); return false;" href="#">▶ Watch</a>
+        </div>
+        <p>Generate images from text prompts. Result loads automatically into the Image Editor.</p>
+        <ul>
+          <li>Z-Image Turbo or FLUX.2-Klein workflows</li>
+          <li>Adjustable steps, width &amp; height</li>
+          <li>Randomise Seed checkbox</li>
+          <li>Triggerable from AI Chat</li>
+        </ul>
+      </div>
     </div>
 
     <div class="feature-row triple">
@@ -834,6 +848,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
           <div class="feat-icon">💬</div>
           <h3>AI Chat</h3>
           <a class="watch-btn" onclick="openYT('jR-NOhpZ6aM'); return false;" href="#">▶ Watch</a>
+          <a class="watch-btn" onclick="openYT('nuRXaxcnNGU'); return false;" href="#">▶ Watch</a>
         </div>
         <p>Integrated chat via OpenRouter or local LM Studio.</p>
         <ul>
@@ -845,6 +860,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <div class="feat-head">
           <div class="feat-icon">🔌</div>
           <h3>MCP Server</h3>
+          <a class="watch-btn" onclick="openYT('9Hh06-5dWIg'); return false;" href="#">▶ Watch</a>
         </div>
         <p>HTTP/SSE server (OpenClaw) for remote Blender control.</p>
         <ul>
@@ -1049,7 +1065,10 @@ footer p { font-size: 13px; color: var(--text-muted); }
     </div>
 
     <div class="tab-panel active" id="tab-mcp">
-      <h3>MCP Server (OpenClaw)</h3>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
+        <h3>MCP Server (OpenClaw)</h3>
+        <a class="watch-btn" onclick="openYT('9Hh06-5dWIg'); return false;" href="#">▶ Watch</a>
+      </div>
       <p class="sub">Remote Blender control via HTTP/SSE.</p>
       <ol>
         <li>Open sidebar panel (<code>N</code> key → OpenBlender tab)</li>
@@ -1067,6 +1086,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
         <h3>AI Chat</h3>
         <a class="watch-btn" onclick="openYT('jR-NOhpZ6aM'); return false;" href="#">▶ Watch</a>
+        <a class="watch-btn" onclick="openYT('AbfF0QtKvw4'); return false;" href="#">▶ Watch</a>
       </div>
       <p class="sub">Integrated AI assistant inside Blender.</p>
       <ol>
@@ -1074,6 +1094,34 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <li>Configure your LLM provider (OpenRouter or LM Studio)</li>
         <li>Click the floating chat button in the Blender UI</li>
       </ol>
+      <h4>Vision / Keyframe Analysis</h4>
+      <p>The AI chat supports <strong>vision-capable models</strong> (e.g. Kimi k2.5, GPT-4o, Claude) for analysing images directly inside Blender.</p>
+      <p style="margin-top:8px"><strong>Video Prompt from Keyframes:</strong></p>
+      <ol>
+        <li>Generate or assign your three keyframe images (First, Middle, Last) via the <strong>IMG to VID</strong> or <strong>Remix</strong> panel</li>
+        <li>Open the floating chat and type: <code>generate a video prompt from keyframes images</code></li>
+        <li>The AI calls <code>get_vid_keyframe_images</code>, receives the three images, analyses the visual sequence, and writes a detailed motion prompt describing scene content, transitions, mood, lighting, and optionally sound design</li>
+      </ol>
+      <p style="margin-top:8px;color:var(--text-dim)">Requires a vision-capable model. The keyframe images are sent as base64 JPEG (max 512px) to stay within context limits.</p>
+      <h4>Batch Generation</h4>
+      <p>Request <strong>multiple images at once</strong> for keyframe sequences:</p>
+      <ul>
+        <li><code>"Generate 3 continuous keyframes of Batman — first, middle, and end frames"</code></li>
+        <li><code>"Create 5 variations of a mountain landscape"</code></li>
+      </ul>
+      <p style="margin-top:8px">The AI generates <strong>coherent, continuous prompts</strong> showing temporal progression and calls the generation tool once per image. Each frame logically follows the previous with evolving poses, camera movement, and lighting. All prompts are automatically enhanced with cinematic detail.</p>
+      <p style="margin-top:8px;color:var(--text-dim)"><strong>Note:</strong> The AI triggers each image sequentially and will confirm after all requested images have been sent to ComfyUI.</p>
+
+      <h4>Automatic Prompt Enhancement</h4>
+      <p>All generation requests are <strong>automatically enhanced</strong> without you needing to write detailed prompts:</p>
+      <ul>
+        <li><strong>Subject specifics</strong>: appearance, pose, action, costume, expression</li>
+        <li><strong>Camera work</strong>: angle, lens, motion, depth of field</li>
+        <li><strong>Lighting</strong>: key light quality, fill, rim, time of day, atmosphere</li>
+        <li><strong>Environment</strong>: location, weather, background elements</li>
+        <li><strong>Style</strong>: cinematic look, color grading, technical quality</li>
+      </ul>
+      <p style="margin-top:8px">Example — You say: <code>"Batman"</code> → AI generates: <em>"Batman in tactical armored suit on rain-soaked Gotham rooftop, low-angle heroic shot with 35mm lens, dramatic rim lighting through storm clouds, volumetric fog, wet cape reflecting neon signs, cinematic color grading, 8k photorealistic"</em></p>
     </div>
 
     <div class="tab-panel" id="tab-i2i">
@@ -1116,6 +1164,8 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <li>Click <strong>"Generate Video"</strong></li>
       </ol>
       <p style="margin-top:10px">All three keyframes required. You can re-click any to replace. Video auto-adds to VSE if enabled.</p>
+      <h4>AI Video Prompt Generation</h4>
+      <p>Once your three keyframes are set, ask the <strong>AI Chat</strong> to <em>"generate a video prompt from keyframes images"</em>. The AI will visually analyse the First &rarr; Middle &rarr; Last sequence and write a cinematic motion prompt describing transitions, mood, lighting, and sound design context.</p>
     </div>
 
     <div class="tab-panel" id="tab-i23">
@@ -1149,6 +1199,15 @@ footer p { font-size: 13px; color: var(--text-muted); }
       <p>Click <strong>"Send to IMG to 3D"</strong> to push the currently displayed image to the IMG to 3D input.</p>
       <h4>🎬 Send to IMG to VID Frame</h4>
       <p>Use <strong>"Send to First / Middle / Last Frame"</strong> to assign the current Image Editor image directly to an IMG to VID keyframe slot — no need to switch panels.</p>
+      <h4>🤖 MCP / AI Chat</h4>
+      <p>Remix is also available via the MCP server and AI Chat using the <code>trigger_remix</code> tool. Agents can transform any displayed image remotely with a text prompt.</p>
+      <h4>📸 Image Capture</h4>
+      <p>Request the current state as an image:</p>
+      <ul>
+        <li><code>"Send me the current image"</code> → Agent calls <code>capture_image_editor</code></li>
+        <li><code>"Show me the viewport"</code> → Agent calls <code>capture_viewport</code></li>
+      </ul>
+      <p style="margin-top:8px">Both return base64 JPEG images that the agent can display in the chat.</p>
       <div class="param-grid" style="margin-top:12px">
         <div class="param"><span class="key">Prompt</span><br><span class="val">Describe the remixed result</span></div>
         <div class="param"><span class="key">Megapixels</span><br><span class="val">Resolution: 0.1 – 4.0</span></div>
@@ -1158,7 +1217,10 @@ footer p { font-size: 13px; color: var(--text-muted); }
     </div>
 
     <div class="tab-panel" id="tab-hdri">
-      <h3>TXT to HDRI</h3>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
+        <h3>TXT to HDRI</h3>
+        <a class="watch-btn" onclick="openYT('nuRXaxcnNGU'); return false;" href="#">▶ Watch</a>
+      </div>
       <p class="sub">Generate 360° equirectangular HDRI environment maps from text prompts using FLUX.2-Klein + Klein 9B HDRI LoRA.</p>
       <ol>
         <li>Set viewport shading to <strong>Material Preview</strong> or <strong>Rendered</strong> so the environment is visible</li>
@@ -1303,6 +1365,37 @@ footer p { font-size: 13px; color: var(--text-muted); }
   <section class="section-anchor reveal" id="version">
     <h2 class="section-title">Version History</h2>
     <div class="version-bar" style="margin-top:16px">
+      <span class="ver-tag">v0.30.1</span>
+      <span class="ver-title">Bug Fix &amp; Quality Update</span>
+      <div class="ver-features">
+        <span class="ver-feat">Improved IMG to VID Workflow base settings</span>
+        <span class="ver-feat">Vision / Keyframe Image Analysis</span>
+        <span class="ver-feat">AI Video Prompt from Keyframes</span>
+        <span class="ver-feat">Batch Generation — Continuous Keyframes</span>
+        <span class="ver-feat">Automatic Prompt Enhancement</span>
+        <span class="ver-feat">Motion-Focused Video Prompts</span>
+        <span class="ver-feat">Auto Audio Context in Video Prompts</span>
+        <span class="ver-feat">Python 3.13 Compatibility (imghdr removed)</span>
+        <span class="ver-feat">Proper Logging (32 prints &rarr; logging module)</span>
+        <span class="ver-feat">MCP Skill Rewrite</span>
+        <span class="ver-feat">Remix MCP Tool</span>
+        <span class="ver-feat">Image Capture Tools (Editor & Viewport)</span>
+      </div>
+    </div>
+    <div class="version-bar" style="margin-top:8px">
+      <span class="ver-tag">v0.30.0</span>
+      <span class="ver-title">Feature Update</span>
+      <div class="ver-features">
+        <span class="ver-feat">TXT to IMG Panel</span>
+        <span class="ver-feat">Randomise Seed — TXT to IMG</span>
+        <span class="ver-feat">Chat Auto-Display — TXT to IMG &amp; HDRI</span>
+        <span class="ver-feat">Sent to ComfyUI Agent Response</span>
+        <span class="ver-feat">Chat UI — Removed Role Labels</span>
+        <span class="ver-feat">Chat UI — Text Vertical Centering Fix</span>
+        <span class="ver-feat">ComfyUI Manager in Installer</span>
+      </div>
+    </div>
+    <div class="version-bar" style="margin-top:8px">
       <span class="ver-tag">v0.29.0</span>
       <span class="ver-title">Major Feature Update</span>
       <div class="ver-features">
