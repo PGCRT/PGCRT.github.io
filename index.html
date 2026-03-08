@@ -1138,7 +1138,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <h1>Open<span>Blender</span></h1>
         <p class="hero-desc">An addon that brings generative workflows directly into Blender. Generate images, videos, 3D models, and receive AI assistance without leaving Blender.</p>
         <div class="hero-badges">
-          <span class="badge version">v0.31.5</span>
+          <span class="badge version">v0.36.1</span>
           <span class="badge blender">Blender 5.0+</span>
           <span class="badge">NVIDIA 24Gb VRAM</span>
   	  <span class="badge">85Gb SSD</span>
@@ -1201,18 +1201,17 @@ footer p { font-size: 13px; color: var(--text-muted); }
           <li>Re-click any keyframe to replace it</li>
         </ul>
       </div>
-      <div class="feat purple">
+      <div class="feat blue">
         <div class="feat-head">
-          <div class="feat-icon">✨</div>
-          <h3>TXT to IMG</h3>
-          <a class="watch-btn" onclick="openYT('AbfF0QtKvw4'); return false;" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch</a>
+          <div class="feat-icon">🎥</div>
+          <h3>VID / TEXT / IMG to VID</h3>
+          <a class="watch-btn" onclick="openYT('eRjTDTA6cVQ'); return false;" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch</a>
         </div>
-        <p>Generate images from text prompts. Result loads automatically into the Image Editor.</p>
+        <p>Generate videos from a variety of inputs using LTX 2.3.</p>
         <ul>
-          <li>Z-Image Turbo or FLUX.2-Klein workflows</li>
-          <li>Adjustable steps, width &amp; height</li>
-          <li>Randomise Seed checkbox</li>
-          <li>Triggerable from AI Chat</li>
+          <li>Text prompt → video</li>
+          <li>Image + prompt → video</li>
+          <li>IC-LoRA depth viewport camera anim to video (With optional FirstFrame)</li>
         </ul>
       </div>
     </div>
@@ -1305,13 +1304,27 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <div class="feat-head">
           <div class="feat-icon">🦴</div>
           <h3>TXT to RIG</h3>
-          <a class="watch-btn" onclick="openYT('6y8waqlKbPE'); return false;" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch</a>
+          <a class="watch-btn" onclick="openYT('NoPpgBmnq20'); return false;" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch</a>
         </div>
         <p>Generate a humanoid rig with motion from a text prompt.</p>
         <ul>
           <li>Motion prompt → animated humanoid dummy</li>
           <li>Auto-imported into scene as a rigged GLB</li>
           <li>Auto First Person camera setup</li>
+          <li>Triggerable from AI Chat</li>
+        </ul>
+      </div>
+      <div class="feat purple">
+        <div class="feat-head">
+          <div class="feat-icon">✨</div>
+          <h3>TXT to IMG</h3>
+          <a class="watch-btn" onclick="openYT('AbfF0QtKvw4'); return false;" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch</a>
+        </div>
+        <p>Generate images from text prompts. Result loads automatically into the Image Editor.</p>
+        <ul>
+          <li>Z-Image Turbo or FLUX.2-Klein workflows</li>
+          <li>Adjustable steps, width &amp; height</li>
+          <li>Randomise Seed checkbox</li>
           <li>Triggerable from AI Chat</li>
         </ul>
       </div>
@@ -1449,6 +1462,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
       <button class="tab-btn" data-tab="chat">Chat</button>
       <button class="tab-btn" data-tab="i2i">IMG to IMG</button>
       <button class="tab-btn" data-tab="i2v">IMG to VID</button>
+      <button class="tab-btn" data-tab="ltx">VID/TXT/IMG to VID</button>
       <button class="tab-btn" data-tab="i23">IMG to 3D</button>
       <button class="tab-btn" data-tab="remix">Remix</button>
       <button class="tab-btn" data-tab="hdri">TXT to HDRI</button>
@@ -1458,18 +1472,18 @@ footer p { font-size: 13px; color: var(--text-muted); }
 
     <div class="tab-panel active" id="tab-mcp">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
-        <h3>MCP Server (OpenClaw)</h3>
+        <h3>MCP Server</h3>
         <a class="watch-btn" onclick="openYT('9Hh06-5dWIg'); return false;" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch</a>
       </div>
       <p class="sub">Remote Blender control via HTTP/SSE.</p>
       <ol>
         <li>Open sidebar panel (<code>N</code> key → OpenBlender tab)</li>
         <li>Click <strong>"Start Server"</strong></li>
-        <li>Connect MCP client to <code>http://[IP]:9876/sse</code></li>
+        <li>Connect MCP client to <code>http://localhost:9876/sse</code></li>
         <li>Use API key if authentication is enabled</li>
       </ol>
       <div class="param-grid" style="margin-top:12px">
-        <div class="param"><span class="key">URL</span><br><span class="val">http://[your-ip]:9876/sse</span></div>
+        <div class="param"><span class="key">URL</span><br><span class="val">http://localhost:9876/sse</span></div>
         <div class="param"><span class="key">Protocol</span><br><span class="val">Server-Sent Events (SSE)</span></div>
       </div>
     </div>
@@ -1562,6 +1576,29 @@ footer p { font-size: 13px; color: var(--text-muted); }
       <p>Once your three keyframes are set, ask the <strong>AI Chat</strong> to <em>"generate a video prompt from keyframes images"</em>. The AI will visually analyse the First &rarr; Middle &rarr; Last sequence and write a cinematic motion prompt describing transitions, mood, lighting, and sound design context.</p>
     </div>
 
+    <div class="tab-panel" id="tab-ltx">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
+        <h3>VID / TEXT / IMG to VID</h3>
+        <a class="watch-btn" onclick="openYT('eRjTDTA6cVQ'); return false;" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch</a>
+      </div>
+      <p class="sub">Generate videos from text, image, or video inputs using LTX 2.3.</p>
+      <h4>🖊️ Text to Video</h4>
+      <ol>
+        <li>Open the <strong>OpenBlender</strong> sidebar panel (image editor) (<code>N</code> key → OpenBlender tab)</li>
+        <li>Select the <strong>TXT to VID</strong> pannel</li>
+        <li>Enter a text prompt describing the scene and motion</li>
+        <li>Click <strong>"Generate"</strong></li>
+      </ol>
+      <h4>🎞️ IC-LoRA Depth Control</h4>
+      <p>The IC-LoRA depth model gives LTX 2.3 structural guidance for consistent motion across frames. It is downloaded via <strong>Blender Preferences → Download Models → LTX 2.3</strong>.</p>
+      <div class="param-grid" style="margin-top:12px">
+        <div class="param"><span class="key">Prompt</span><br><span class="val">Describe scene, camera motion, mood</span></div>
+        <div class="param"><span class="key">Steps</span><br><span class="val">Inference steps</span></div>
+        <div class="param"><span class="key">Frame Count</span><br><span class="val">Output video length in frames</span></div>
+        <div class="param"><span class="key">Resolution</span><br><span class="val">Width &amp; height set by the blender render settings define the aspect ratio</span></div>
+      </div>
+    </div>
+
     <div class="tab-panel" id="tab-i23">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
         <h3>IMG to 3D</h3>
@@ -1636,7 +1673,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
     <div class="tab-panel" id="tab-rig">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
         <h3>TXT to RIG</h3>
-        <a class="watch-btn" onclick="openYT('6y8waqlKbPE'); return false;" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3.6 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch</a>
+        <a class="watch-btn" onclick="openYT('NoPpgBmnq20'); return false;" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch</a>
       </div>
       <p class="sub">Generate a humanoid dummy rig with motion from a text prompt using HY-Motion. The output is a generic animated skeleton — not a character with specific appearance or textures.</p>
       <ol>
@@ -1683,26 +1720,14 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <div class="cfg-row"><span class="k">Port</span><span class="v">9876</span></div>
         <div class="cfg-row"><span class="k">API Key</span><span class="v">optional</span></div>
         <div class="cfg-row"><span class="k">Auto Start</span><span class="v">on/off</span></div>
+        <div class="cfg-row"><span class="k">Uses with</span><span class="v">OpenClaw, Claude Code, OpenCode etc..</span></div>
       </div>
       <div class="config-card">
         <h3>🤖 LLM Provider</h3>
         <div class="cfg-row"><span class="k">Provider</span><span class="v">OpenRouter / LM Studio</span></div>
         <div class="cfg-row"><span class="k">OR API Key</span><span class="v">your-key</span></div>
-        <div class="cfg-row"><span class="k">OR Model</span><span class="v">anthropic/claude-3.5-sonnet</span></div>
+        <div class="cfg-row"><span class="k">OR Model</span><span class="v">moonshotai/kimi-k2.5</span></div>
         <div class="cfg-row"><span class="k">LM Studio URL</span><span class="v">127.0.0.1:1234</span></div>
-      </div>
-      <div class="config-card">
-        <h3>🎨 ComfyUI</h3>
-        <div class="cfg-row"><span class="k">Server URL</span><span class="v">127.0.0.1:8188</span></div>
-        <div class="cfg-row"><span class="k">Auto-add to VSE</span><span class="v">on/off</span></div>
-      </div>
-      <div class="config-card">
-        <h3>👁️ Panel Visibility</h3>
-        <div class="cfg-row"><span class="k">MCP Server</span><span class="v">toggle</span></div>
-        <div class="cfg-row"><span class="k">Chat</span><span class="v">toggle</span></div>
-        <div class="cfg-row"><span class="k">IMG to IMG</span><span class="v">toggle</span></div>
-        <div class="cfg-row"><span class="k">IMG to VID</span><span class="v">toggle</span></div>
-        <div class="cfg-row"><span class="k">IMG to 3D</span><span class="v">toggle</span></div>
       </div>
     </div>
   </section>
@@ -1777,6 +1802,20 @@ footer p { font-size: 13px; color: var(--text-muted); }
   <section class="section-anchor reveal" id="version">
     <h2 class="section-title">Version History</h2>
     <div class="version-bar" style="margin-top:16px">
+      <span class="ver-tag">v0.36.1</span>
+      <span class="ver-title">Video Pipeline &amp; MCP Hardening</span>
+      <div class="ver-features">
+        <span class="ver-feat">TXT to VID</span>
+        <span class="ver-feat">1x IMG to VID</span>
+        <span class="ver-feat">3x IMG to VID (renamed)</span>
+        <span class="ver-feat">VID to VID</span>
+        <span class="ver-feat">Unused Models Checker</span>
+        <span class="ver-feat">ComfyUI Progress Bar</span>
+        <span class="ver-feat">MCP Localhost Default</span>
+        <span class="ver-feat">Allow Remote Access Preference</span>
+      </div>
+    </div>
+    <div class="version-bar" style="margin-top:8px">
       <span class="ver-tag">v0.31.5</span>
       <span class="ver-title">Model Paths &amp; Install UX</span>
       <div class="ver-features">
