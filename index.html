@@ -514,11 +514,11 @@ h2.section-title .label {
 /* ─── Feature cards ─── */
 .feature-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 12px;
   margin-bottom: 12px;
 }
-.feature-row.triple { grid-template-columns: 1fr 1fr 1fr; }
+.feature-row.triple { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
 
 .feat {
   background: var(--glass);
@@ -1138,7 +1138,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <h1>Open<span>Blender</span></h1>
         <p class="hero-desc">An addon that brings generative workflows directly into Blender. Generate images, videos, 3D models, and receive AI assistance without leaving Blender.</p>
         <div class="hero-badges">
-          <span class="badge version">v0.36.3</span>
+          <span class="badge version">v0.37.0</span>
           <span class="badge blender">Blender 5.0+</span>
           <span class="badge">NVIDIA 24Gb VRAM</span>
   	  <span class="badge">85Gb SSD</span>
@@ -1172,7 +1172,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
   <!-- Features -->
   <section class="section-anchor reveal" id="features">
     <h2 class="section-title">Features <span class="label">Core</span></h2>
-    <p class="section-sub">Ten modules that cover generation, remix, LoRA, HDRI, rigging, chat, and remote control.</p>
+    <p class="section-sub">Fifteen modules that cover generation, IMG to IMG, LoRA, HDRI, rigging, chat, and remote control.</p>
 
     <div class="feature-row triple">
       <div class="feat orange">
@@ -1257,18 +1257,16 @@ footer p { font-size: 13px; color: var(--text-muted); }
     </div>
 
     <div class="feature-row triple">
-      <div class="feat blue">
+            <div class="feat blue">
         <div class="feat-head">
-          <div class="feat-icon">🎨</div>
-          <h3>Remix</h3>
-          <a class="watch-btn" onclick="openYT('eoYKnJ3uiXA'); return false;" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch</a>
+          <div class="feat-icon">📷</div>
+          <h3>Viewport to IMG</h3>
         </div>
-        <p>Transform any displayed image from inside the Image Editor. Uses the current image as IMG to IMG input.</p>
+        <p>Capture current viewport directly to Image Editor.</p>
         <ul>
-          <li>Image Editor side panel — no mode switching</li>
-          <li>Auto-numbered output: Remix.001, Remix.002…</li>
-          <li>Send result to IMG to 3D with one click</li>
-          <li>Adjustable megapixels, steps, denoise &amp; prompt</li>
+          <li>One-click viewport capture</li>
+          <li>Auto-loads into Image Editor</li>
+          <li>Use as input for other workflows</li>
         </ul>
       </div>
       <div class="feat purple">
@@ -1328,8 +1326,58 @@ footer p { font-size: 13px; color: var(--text-muted); }
           <li>Triggerable from AI Chat</li>
         </ul>
       </div>
+      <div class="feat blue">
+        <div class="feat-head">
+          <div class="feat-icon">🧊</div>
+          <h3>MESH to RIG</h3>
+        </div>
+        <p>Retarget any mesh to a generated rig.</p>
+        <ul>
+          <li>Use existing geometry with new animation</li>
+          <li>Auto-weight painting and bone binding</li>
+          <li>GLB export with full rig</li>
+        </ul>
+      </div>
     </div>
-  </section>
+      <div class="feature-row triple">
+      <div class="feat orange">
+        <div class="feat-head">
+          <div class="feat-icon">💠</div>
+          <h3>IMG to SPLAT</h3>
+        </div>
+        <p>Generate Gaussian splats from images. Imports PLY with Geometry Nodes rendering.</p>
+        <ul>
+          <li>Point cloud with per-splat color and scale</li>
+          <li>Geometry Nodes-based camera-facing billboards</li>
+          <li>Emission shader with Gaussian falloff</li>
+        </ul>
+      </div>
+      <div class="feat purple">
+        <div class="feat-head">
+          <div class="feat-icon">🦴</div>
+          <h3>IMG to RIG</h3>
+        </div>
+        <p>Generate rigged humanoid characters from images.</p>
+        <ul>
+          <li>Image input → animated humanoid dummy</li>
+          <li>Auto-imported as GLB with armature</li>
+          <li>Accessible from sidebar panel</li>
+        </ul>
+      </div>
+      <div class="feat green">
+        <div class="feat-head">
+          <div class="feat-icon">🎥</div>
+          <h3>VID to RIG</h3>
+        </div>
+        <p>Generate rigged animation from video input.</p>
+        <ul>
+          <li>Load video → process through ComfyUI</li>
+          <li>Animated character matching video motion</li>
+          <li>Simplified video loading workflow</li>
+        </ul>
+      </div>
+    </div>
+</section>
 
   <div class="divider"></div>
 
@@ -1398,7 +1446,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
   <!-- Installation -->
   <section class="section-anchor reveal" id="installation">
     <h2 class="section-title">Installation</h2>
-    <p class="section-sub">Four steps to get everything running.</p>
+    <p class="section-sub">Three steps to get everything running.</p>
 
     <div class="install-timeline">
       <div class="install-step">
@@ -1409,6 +1457,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
           <li>Blender → <code>Edit → Preferences → Extensions</code></li>
           <li>Click <strong>"Install from Disk"</strong>, select the <code>.zip</code></li>
           <li>Enable the extension by checking the checkbox</li>
+          <li>Restart Blender</li>
         </ol>
       </div>
 
@@ -1419,32 +1468,18 @@ footer p { font-size: 13px; color: var(--text-muted); }
           <li>Install <strong>Visual C++ Redistributable</strong>: <a href="https://aka.ms/vc14/vc_redist.x64.exe" style="color:var(--accent2)">aka.ms/vc14/vc_redist.x64.exe</a></li>
           <li>Install <strong>Windows PowerShell 7</strong>: <a href="https://github.com/PowerShell/PowerShell/releases/download/v7.5.4/PowerShell-7.5.4-win-x64.msi" style="color:var(--accent2)">PowerShell-7.5.4-win-x64.msi</a></li>
           <li>Update your <strong>NVIDIA drivers</strong> to the latest version</li>
-          <li>Navigate to the addon directory:<br><code>C:\Users\YourName\AppData\...\Blender\5.0\extensions\user_default\openblender</code></li>
-          <li>Run <code>install_comfyui_aio.bat</code> and follow the on-screen instructions — this installs <strong>ComfyUI</strong>, performance packages (Triton, SageAttention, FlashAttention)</li>
-          <li>Nodes, dependencies, and AI models are set up from Blender Preferences (see Step 3 below)</li>
+          <li>Blender → OpenBlender addon preferences → Install</li>
+          <li><strong>Verify ComfyUI Installation</strong> — set your ComfyUI path (e.g. <code>D:\ComfyUI_windows_portable</code>)</li>
         </ol>
       </div>
 
       <div class="install-step">
         <div class="step-num">3</div>
-        <h3>Set Up in Blender Preferences</h3>
-        <p style="font-size:13px;color:var(--text-dim);margin-bottom:10px">Open <code>Edit → Preferences → Add-ons → OpenBlender</code> and run these four actions in order:</p>
-        <ol>
-          <li><strong>Verify ComfyUI Installation</strong> — set your ComfyUI path (e.g. <code>D:\ComfyUI_windows_portable</code>)</li>
-          <li><strong>Install Nodes</strong> — clones all required ComfyUI custom nodes.</li>
-          <li><strong>Install Dependencies</strong> — opens a console and installs Python packages into ComfyUI. Wait for <em>"Installation complete!"</em>.</li>
-          <li><strong>Download Models</strong> — install the models you want; models download into the correct ComfyUI folders automatically.</li>
-          <li><strong>Configure</strong> — set your AI provider (OpenRouter API key or LM Studio URL)</li>
-        </ol>
-      </div>
-
-      <div class="install-step">
-        <div class="step-num">4</div>
         <h3>Update</h3>
         <ol>
           <li>Check the <a href="https://crtcgi.gumroad.com/l/OpenBlender" target="_blank" style="color:var(--accent)">addon's Gumroad page</a> for new versions and download updates</li>
-          <li>Replace the content of <code>Blender\5.0\extensions\user_default\openblender</code></li>
-          <li>Open Blender → <code>Preferences → Add-ons → OpenBlender → Verify ComfyUI Path → Instal Nodes / Dependencies / Models if missing </code> After a new update that brings new features</li>
+          <li>Use the Install button to perform ComfyUI check / update (nodes, dependencies)</li>
+          <li>Update workflows to fetch current ones (or restore to default)</li>
         </ol>
       </div>
     </div>
@@ -1464,9 +1499,11 @@ footer p { font-size: 13px; color: var(--text-muted); }
       <button class="tab-btn" data-tab="i2v">IMG to VID</button>
       <button class="tab-btn" data-tab="ltx">VID/TXT/IMG to VID</button>
       <button class="tab-btn" data-tab="i23">IMG to 3D</button>
-      <button class="tab-btn" data-tab="remix">Remix</button>
       <button class="tab-btn" data-tab="hdri">TXT to HDRI</button>
       <button class="tab-btn" data-tab="rig">TXT to RIG</button>
+      <button class="tab-btn" data-tab="splat">IMG to SPLAT</button>
+      <button class="tab-btn" data-tab="i2rig">IMG to RIG</button>
+      <button class="tab-btn" data-tab="v2rig">VID to RIG</button>
       <button class="tab-btn" data-tab="lora">LoRA Support</button>
     </div>
 
@@ -1504,7 +1541,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
       <p>The AI chat supports <strong>vision-capable models</strong> (e.g. Kimi k2.5, GPT-4o, Claude) for analysing images directly inside Blender.</p>
       <p style="margin-top:8px"><strong>Video Prompt from Keyframes:</strong></p>
       <ol>
-        <li>Generate or assign your three keyframe images (First, Middle, Last) via the <strong>IMG to VID</strong> or <strong>Remix</strong> panel</li>
+        <li>Generate or assign your three keyframe images (First, Middle, Last) via the <strong>IMG to VID</strong> or <strong>IMG to IMG</strong> panel</li>
         <li>Open the floating chat and type: <code>generate a video prompt from keyframes images</code></li>
         <li>The AI calls <code>get_vid_keyframe_images</code>, receives the three images, analyses the visual sequence, and writes a detailed motion prompt describing scene content, transitions, mood, lighting, and optionally sound design</li>
       </ol>
@@ -1615,7 +1652,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
 
     <div class="tab-panel" id="tab-remix">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px">
-        <h3>Remix</h3>
+        <h3>IMG to IMG</h3>
         <a class="watch-btn" onclick="openYT('eoYKnJ3uiXA'); return false;" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>Watch</a>
       </div>
       <p class="sub">Transform images from inside the Image Editor side panel.</p>
@@ -1623,15 +1660,15 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <li>Open any image in the <strong>Image Editor</strong></li>
         <li>Press <code>N</code> → find the <strong>OpenBlender</strong> tab in the sidebar</li>
         <li>Set your <strong>Prompt</strong>, Megapixels, Steps, and Denoise strength</li>
-        <li>Click <strong>"Generate Remix"</strong></li>
-        <li>Result appears as <code>Remix.001</code>, <code>Remix.002</code>… in the Image Editor</li>
+        <li>Click <strong>"Generate"</strong></li>
+        <li>Result appears as <code>Result</code>, <code>Result_001</code>… in the Image Editor</li>
       </ol>
       <h4>📤 Send to IMG to 3D</h4>
       <p>Click <strong>"Send to IMG to 3D"</strong> to push the currently displayed image to the IMG to 3D input.</p>
       <h4>🎬 Send to IMG to VID Frame</h4>
       <p>Use <strong>"Send to First / Middle / Last Frame"</strong> to assign the current Image Editor image directly to an IMG to VID keyframe slot.</p>
       <h4>🤖 MCP / AI Chat</h4>
-      <p>Remix is also available via the MCP server and AI Chat using the <code>trigger_remix</code> tool. Agents can transform any displayed image remotely with a text prompt.</p>
+      <p>IMG to IMG is also available via the MCP server and AI Chat using the <code>trigger_remix</code> tool. Agents can transform any displayed image remotely with a text prompt.</p>
       <h4>📸 Image Capture</h4>
       <p>Request the current state as an image:</p>
       <ul>
@@ -1640,7 +1677,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
       </ul>
       <p style="margin-top:8px">Both return base64 JPEG images that the agent can display in the chat.</p>
       <div class="param-grid" style="margin-top:12px">
-        <div class="param"><span class="key">Prompt</span><br><span class="val">Describe the remixed result</span></div>
+        <div class="param"><span class="key">Prompt</span><br><span class="val">Describe the result</span></div>
         <div class="param"><span class="key">Megapixels</span><br><span class="val">Resolution: 0.1 – 4.0</span></div>
         <div class="param"><span class="key">Steps</span><br><span class="val">Inference steps: 1 – 20</span></div>
         <div class="param"><span class="key">Denoise</span><br><span class="val">0.0 – 1.0 (Z-Image Turbo only)</span></div>
@@ -1705,7 +1742,44 @@ footer p { font-size: 13px; color: var(--text-muted); }
       </ol>
       <p style="margin-top:10px">Any ComfyUI-compatible LoRA works. Stack multiple LoRAs in a single workflow. Find models at <a href="https://civitai.green/user/pgc" target="_blank" style="color:var(--accent3);">CivitAI</a>.</p>
     </div>
-  </section>
+      <div class="tab-panel" id="tab-splat">
+      <h3>IMG to SPLAT</h3>
+      <p class="sub">Generate Gaussian splats from images.</p>
+      <ol>
+        <li>Enable the IMG to SPLAT panel in addon Preferences</li>
+        <li>Open the sidebar (<code>N</code>) → OpenBlender → IMG to SPLAT</li>
+        <li>Load an image or use the Image Editor image</li>
+        <li>Adjust Max Splats and Scale settings</li>
+        <li>Click <strong>Generate</strong> — PLY imports with Geometry Nodes setup</li>
+      </ol>
+      <div class="param-grid" style="margin-top:12px">
+        <div class="param"><span class="key">Max Splats</span><br><span class="val">Limit point count</span></div>
+        <div class="param"><span class="key">Scale</span><br><span class="val">Overall splat size</span></div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-i2rig">
+      <h3>IMG to RIG</h3>
+      <p class="sub">Generate rigged humanoid from image.</p>
+      <ol>
+        <li>Enable the IMG to RIG panel in addon Preferences</li>
+        <li>Open the sidebar → OpenBlender → IMG to RIG</li>
+        <li>Load an image of a humanoid figure</li>
+        <li>Click <strong>Generate</strong> — rigged GLB imports into scene</li>
+      </ol>
+    </div>
+
+    <div class="tab-panel" id="tab-v2rig">
+      <h3>VID to RIG</h3>
+      <p class="sub">Generate rigged animation from video.</p>
+      <ol>
+        <li>Enable the VID to RIG panel in addon Preferences</li>
+        <li>Open the sidebar → OpenBlender → VID to RIG</li>
+        <li>Load a video file showing human motion</li>
+        <li>Click <strong>Generate</strong> — animated rig imports into scene</li>
+      </ol>
+    </div>
+</section>
 
   <div class="divider"></div>
 
@@ -1802,6 +1876,15 @@ footer p { font-size: 13px; color: var(--text-muted); }
   <section class="section-anchor reveal" id="version">
     <h2 class="section-title">Version History</h2>
     <div class="version-bar" style="margin-top:16px">
+      <span class="ver-tag">v0.37.0</span>
+      <span class="ver-title">AIO Simplification and MCP Retrieval Rewrite</span>
+      <div class="ver-features">
+        <span class="ver-feat">Simplified ComfyUI installer flow</span>
+        <span class="ver-feat">Workflow update system</span>
+        <span class="ver-feat">Knowledge-based MCP search</span>
+      </div>
+    </div>
+    <div class="version-bar" style="margin-top:16px">
       <span class="ver-tag">v0.36.3</span>
       <span class="ver-title">Wheel Update for FlashAttention</span>
       <div class="ver-features">
@@ -1864,7 +1947,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
         <span class="ver-feat">Automatic Prompt Enhancement</span>
         <span class="ver-feat">Motion-Focused Video Prompts</span>
         <span class="ver-feat">MCP Skill Rewrite</span>
-        <span class="ver-feat">Remix MCP Tool</span>
+        <span class="ver-feat">IMG to IMG MCP Tool</span>
         <span class="ver-feat">Image Capture Tools (Editor &amp; Viewport)</span>
       </div>
     </div>
@@ -1923,7 +2006,7 @@ footer p { font-size: 13px; color: var(--text-muted); }
       <span class="ver-tag">v0.27.0</span>
       <span class="ver-title">Feature Update</span>
       <div class="ver-features">
-        <span class="ver-feat">Remix</span>
+        <span class="ver-feat">IMG to IMG</span>
         <span class="ver-feat">LoRA Support</span>
         <span class="ver-feat">Send to IMG→3D</span>
         <span class="ver-feat">Streaming Chat</span>
